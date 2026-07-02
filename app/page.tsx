@@ -108,7 +108,7 @@ export default function AgenticPage() {
       <MobileNav />
 
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
-      <section className="relative h-screen overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden flex flex-col items-center justify-center">
 
         {/* Image background — zooms in once intro is done */}
         <img
@@ -121,52 +121,86 @@ export default function AgenticPage() {
           }}
         />
 
-
-
         {/* Progressive blur + light gradient rising from bottom */}
-        <div className="absolute inset-x-0 bottom-0 z-10 pointer-events-none" style={{ height: "65%", background: "linear-gradient(to top, #F5F4F0 0%, #F5F4F0 18%, rgba(245,244,240,0.85) 35%, rgba(245,244,240,0.5) 55%, rgba(245,244,240,0.15) 75%, transparent 100%)" }} />
+        <div className="absolute inset-x-0 bottom-0 z-10 pointer-events-none" style={{ height: "70%", background: "linear-gradient(to top, #F5F4F0 0%, #F5F4F0 15%, rgba(245,244,240,0.9) 30%, rgba(245,244,240,0.6) 50%, rgba(245,244,240,0.2) 70%, transparent 100%)" }} />
         {/* Backdrop blur layers — progressively lighter toward top */}
-        <div className="absolute inset-x-0 bottom-0 z-10 pointer-events-none" style={{ height: "20%", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", maskImage: "linear-gradient(to top, black 0%, transparent 100%)", WebkitMaskImage: "linear-gradient(to top, black 0%, transparent 100%)" }} />
-        <div className="absolute inset-x-0 bottom-0 z-10 pointer-events-none" style={{ height: "38%", backdropFilter: "blur(6px)", WebkitBackdropFilter: "blur(6px)", maskImage: "linear-gradient(to top, black 0%, transparent 100%)", WebkitMaskImage: "linear-gradient(to top, black 0%, transparent 100%)" }} />
-        <div className="absolute inset-x-0 bottom-0 z-10 pointer-events-none" style={{ height: "55%", backdropFilter: "blur(2px)", WebkitBackdropFilter: "blur(2px)", maskImage: "linear-gradient(to top, black 0%, transparent 100%)", WebkitMaskImage: "linear-gradient(to top, black 0%, transparent 100%)" }} />
+        <div className="absolute inset-x-0 bottom-0 z-10 pointer-events-none" style={{ height: "25%", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", maskImage: "linear-gradient(to top, black 0%, transparent 100%)", WebkitMaskImage: "linear-gradient(to top, black 0%, transparent 100%)" }} />
+        <div className="absolute inset-x-0 bottom-0 z-10 pointer-events-none" style={{ height: "45%", backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)", maskImage: "linear-gradient(to top, black 0%, transparent 100%)", WebkitMaskImage: "linear-gradient(to top, black 0%, transparent 100%)" }} />
+        <div className="absolute inset-x-0 bottom-0 z-10 pointer-events-none" style={{ height: "60%", backdropFilter: "blur(3px)", WebkitBackdropFilter: "blur(3px)", maskImage: "linear-gradient(to top, black 0%, transparent 100%)", WebkitMaskImage: "linear-gradient(to top, black 0%, transparent 100%)" }} />
 
-        {/* Spacer so hero content doesn't sit under the fixed nav */}
-        <div className="h-20" />
+        {/* Centered content container */}
+        <div className="relative z-30 flex flex-col items-center justify-center max-w-3xl px-6 md:px-12 py-20 text-center">
+          {/* Subtitle tag */}
+          <div
+            style={{
+              opacity: heroReady ? 1 : 0,
+              filter: heroReady ? "blur(0px)" : "blur(16px)",
+              transform: heroReady ? "translateY(0px)" : "translateY(-16px)",
+              transition: "opacity 0.8s cubic-bezier(0.16,1,0.3,1) 0ms, filter 0.8s cubic-bezier(0.16,1,0.3,1) 0ms, transform 0.8s cubic-bezier(0.16,1,0.3,1) 0ms",
+            }}
+            className="mb-6"
+          >
+            <Tag>AGENT ORCHESTRATION</Tag>
+          </div>
 
-        {/* Title + metrics — anchored to bottom left */}
-        <div className="absolute inset-x-0 bottom-0 z-30 flex flex-col px-6 md:px-12 pb-12 max-w-3xl">
           {/* Title */}
           <h1
-            className="text-6xl sm:text-7xl md:text-8xl font-light text-[#111] leading-[1.0] tracking-tight mb-10"
+            className="text-5xl sm:text-6xl md:text-7xl font-light text-[#111] leading-[1.1] tracking-tight mb-6"
             style={{
               fontFamily: '"IBM Plex Sans", sans-serif',
               opacity: heroReady ? 1 : 0,
               filter: heroReady ? "blur(0px)" : "blur(24px)",
-              transform: heroReady ? "translateY(0px)" : "translateY(32px)",
-              transition: "opacity 1s cubic-bezier(0.16,1,0.3,1) 0ms, filter 1s cubic-bezier(0.16,1,0.3,1) 0ms, transform 1s cubic-bezier(0.16,1,0.3,1) 0ms",
+              transform: heroReady ? "translateY(0px)" : "translateY(20px)",
+              transition: "opacity 1s cubic-bezier(0.16,1,0.3,1) 80ms, filter 1s cubic-bezier(0.16,1,0.3,1) 80ms, transform 1s cubic-bezier(0.16,1,0.3,1) 80ms",
             }}
           >
-            Build &amp;<br />orchestrate AI<br />agents while<br />you sleep.
+            Build &amp; orchestrate AI<br />agents while you sleep.
           </h1>
 
-          {/* 3 metrics — staggered after title */}
-          <div className="flex gap-8 sm:gap-12">
+          {/* Subtitle text */}
+          <p
+            className="text-base md:text-lg text-black/60 leading-relaxed mb-8 max-w-2xl"
+            style={{
+              opacity: heroReady ? 1 : 0,
+              filter: heroReady ? "blur(0px)" : "blur(16px)",
+              transform: heroReady ? "translateY(0px)" : "translateY(16px)",
+              transition: "opacity 0.8s cubic-bezier(0.16,1,0.3,1) 160ms, filter 0.8s cubic-bezier(0.16,1,0.3,1) 160ms, transform 0.8s cubic-bezier(0.16,1,0.3,1) 160ms",
+            }}
+          >
+            Create, compose, and deploy autonomous agents that work 24/7. No boilerplate required.
+          </p>
+
+          {/* CTA Button */}
+          <button
+            className="px-8 py-3 bg-[#111] text-white rounded-full font-medium text-sm hover:bg-black/80 transition-colors"
+            style={{
+              opacity: heroReady ? 1 : 0,
+              filter: heroReady ? "blur(0px)" : "blur(16px)",
+              transform: heroReady ? "translateY(0px)" : "translateY(16px)",
+              transition: "opacity 0.8s cubic-bezier(0.16,1,0.3,1) 240ms, filter 0.8s cubic-bezier(0.16,1,0.3,1) 240ms, transform 0.8s cubic-bezier(0.16,1,0.3,1) 240ms",
+            }}
+          >
+            Get Started
+          </button>
+
+          {/* Metrics below CTA */}
+          <div
+            className="flex gap-8 sm:gap-12 mt-12 pt-12 border-t border-black/10"
+            style={{
+              opacity: heroReady ? 1 : 0,
+              filter: heroReady ? "blur(0px)" : "blur(16px)",
+              transform: heroReady ? "translateY(0px)" : "translateY(16px)",
+              transition: "opacity 0.8s cubic-bezier(0.16,1,0.3,1) 320ms, filter 0.8s cubic-bezier(0.16,1,0.3,1) 320ms, transform 0.8s cubic-bezier(0.16,1,0.3,1) 320ms",
+            }}
+          >
             {[
               { value: "50M+", label: "Tasks" },
               { value: "99.9%", label: "Uptime" },
               { value: "180+", label: "Countries" },
             ].map((stat, i) => (
-              <div
-                key={i}
-                style={{
-                  opacity: heroReady ? 1 : 0,
-                  filter: heroReady ? "blur(0px)" : "blur(16px)",
-                  transform: heroReady ? "translateY(0px)" : "translateY(20px)",
-                  transition: `opacity 0.8s cubic-bezier(0.16,1,0.3,1) ${120 + i * 80}ms, filter 0.8s cubic-bezier(0.16,1,0.3,1) ${120 + i * 80}ms, transform 0.8s cubic-bezier(0.16,1,0.3,1) ${120 + i * 80}ms`,
-                }}
-              >
-                <div className="text-3xl sm:text-4xl text-[#111] font-light tracking-tight" style={{ fontFamily: '"IBM Plex Sans", sans-serif' }}>{stat.value}</div>
-                <div className="text-xs text-black/40 tracking-widest uppercase mt-1" style={{ fontFamily: '"IBM Plex Sans", sans-serif' }}>{stat.label}</div>
+              <div key={i} className="text-center">
+                <div className="text-2xl sm:text-3xl text-[#111] font-light tracking-tight" style={{ fontFamily: '"IBM Plex Sans", sans-serif' }}>{stat.value}</div>
+                <div className="text-xs text-black/40 tracking-widest uppercase mt-2" style={{ fontFamily: '"IBM Plex Sans", sans-serif' }}>{stat.label}</div>
               </div>
             ))}
           </div>
