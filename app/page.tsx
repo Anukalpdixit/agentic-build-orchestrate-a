@@ -110,14 +110,11 @@ export default function AgenticPage() {
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
       <section className="relative h-screen overflow-hidden">
 
-        {/* Video background — zooms in once intro is done */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
+        {/* Image background — zooms in once intro is done */}
+        <img
+          src="/hero-background.jpg"
+          alt="Scenic landscape with rolling green hills"
           className="absolute inset-0 w-full h-full object-cover z-0"
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/agentic-hero-9yW3wnTNMfn2U6lsVhTTZSJFEvAoSj.mp4"
           style={{
             transform: videoReady ? "scale(1.05)" : "scale(0.85)",
             transition: "transform 2s cubic-bezier(0.16, 1, 0.3, 1)",
