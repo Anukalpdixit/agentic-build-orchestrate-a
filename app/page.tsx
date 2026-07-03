@@ -321,27 +321,32 @@ export default function AgenticPage() {
               { n: "03", title: "Test",    desc: "Run sandboxed simulations. Inspect every decision in the execution trace.", delay: 140, img: "/images/workflow-test.png" },
               { n: "04", title: "Deploy",  desc: "Push globally in one click. Agents auto-scale, self-heal, and report back.", delay: 200, img: "/images/workflow-deploy.png" },
             ].map((step) => (
-              <BentoCard key={step.n} className="relative overflow-hidden flex flex-col min-h-[320px]" delay={step.delay}>
-                {/* Image at top — mask fades it out strongly before the bottom edge */}
-                <div className="absolute inset-x-0 top-0 h-56 pointer-events-none">
-                  <img
-                    src={step.img}
-                    alt={step.title}
-                    className="w-full h-full object-cover object-top"
+              <BentoCard key={step.n} className="relative overflow-hidden flex flex-col min-h-[320px] border-2 border-sky-blue-light/30 bg-gradient-to-br from-sky-blue-light/5 to-soft-green-light/5" delay={step.delay}>
+                {/* Elegant gradient placeholder for illustration */}
+                <div className="absolute inset-x-0 top-0 h-48 pointer-events-none opacity-40">
+                  <div
+                    className="w-full h-full"
                     style={{
-                      maskImage: "linear-gradient(to bottom, black 0%, black 30%, transparent 80%)",
-                      WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 30%, transparent 80%)",
+                      background: step.n === "01" 
+                        ? "linear-gradient(135deg, var(--sky-blue) 0%, var(--sky-blue-light) 100%)"
+                        : step.n === "02"
+                        ? "linear-gradient(135deg, var(--soft-green) 0%, var(--sky-blue-light) 100%)"
+                        : step.n === "03"
+                        ? "linear-gradient(135deg, var(--sky-blue-light) 0%, var(--soft-green-light) 100%)"
+                        : "linear-gradient(135deg, var(--warm-orange-light) 0%, var(--sky-blue-light) 100%)",
+                      maskImage: "linear-gradient(to bottom, black 0%, black 40%, transparent 85%)",
+                      WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 40%, transparent 85%)",
                     }}
                   />
                 </div>
                 {/* Number top-left */}
                 <div className="relative z-10 p-7">
-                  <span className="font-pixel text-[11px] text-black/20 tracking-widest block">{step.n}</span>
+                  <span className="font-pixel text-[11px] text-sky-blue/40 tracking-widest block">{step.n}</span>
                 </div>
                 {/* Text pushed further down */}
                 <div className="relative z-10 px-7 pb-7 mt-auto pt-16">
-                  <h3 className="text-2xl font-light mb-3">{step.title}</h3>
-                  <p className="text-sm text-black/45 leading-relaxed">{step.desc}</p>
+                  <h3 className="text-2xl font-light mb-3 text-neutral-dark">{step.title}</h3>
+                  <p className="text-sm text-neutral-dark/50 leading-relaxed">{step.desc}</p>
                 </div>
               </BentoCard>
             ))}
