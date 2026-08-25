@@ -316,32 +316,37 @@ export default function AgenticPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-3" onMouseMove={handleMouse}>
             {[
-              { n: "01", title: "Define",  desc: "Describe your agent in plain language. Set objectives, tools, and boundaries.", delay: 0,   img: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/define-5aafAmGBrxZpOqJ3XLHY3n3qzC2I5K.png" },
-              { n: "02", title: "Compose", desc: "Chain agents together in the visual editor. Wire triggers, conditions, and outputs.", delay: 80,  img: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/compose-5RT5VR4f1Y3GoFmovqTKLTG4UXp3g2.png" },
-              { n: "03", title: "Test",    desc: "Run sandboxed simulations. Inspect every decision in the execution trace.", delay: 140, img: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/test-zm8guZwxJHtwWsJ7XO4B0CF7GzlNK8.png" },
-              { n: "04", title: "Deploy",  desc: "Push globally in one click. Agents auto-scale, self-heal, and report back.", delay: 200, img: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/deploy-an8fgHSLzniojkcmRyGGIFQUJF9T5J.png" },
+              { n: "01", title: "Define",  desc: "Describe your agent in plain language. Set objectives, tools, and boundaries.", delay: 0,   img: "/images/workflow-define.png" },
+              { n: "02", title: "Compose", desc: "Chain agents together in the visual editor. Wire triggers, conditions, and outputs.", delay: 80,  img: "/images/workflow-compose.png" },
+              { n: "03", title: "Test",    desc: "Run sandboxed simulations. Inspect every decision in the execution trace.", delay: 140, img: "/images/workflow-test.png" },
+              { n: "04", title: "Deploy",  desc: "Push globally in one click. Agents auto-scale, self-heal, and report back.", delay: 200, img: "/images/workflow-deploy.png" },
             ].map((step) => (
-              <BentoCard key={step.n} className="relative overflow-hidden flex flex-col min-h-[320px]" delay={step.delay}>
-                {/* Image at top — mask fades it out strongly before the bottom edge */}
-                <div className="absolute inset-x-0 top-0 h-56 pointer-events-none">
-                  <img
-                    src={step.img}
-                    alt={step.title}
-                    className="w-full h-full object-cover object-top"
+              <BentoCard key={step.n} className="relative overflow-hidden flex flex-col min-h-[320px] border-2 border-sky-blue-light/30 bg-gradient-to-br from-sky-blue-light/5 to-soft-green-light/5" delay={step.delay}>
+                {/* Elegant gradient placeholder for illustration */}
+                <div className="absolute inset-x-0 top-0 h-48 pointer-events-none opacity-40">
+                  <div
+                    className="w-full h-full"
                     style={{
-                      maskImage: "linear-gradient(to bottom, black 0%, black 30%, transparent 80%)",
-                      WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 30%, transparent 80%)",
+                      background: step.n === "01" 
+                        ? "linear-gradient(135deg, var(--sky-blue) 0%, var(--sky-blue-light) 100%)"
+                        : step.n === "02"
+                        ? "linear-gradient(135deg, var(--soft-green) 0%, var(--sky-blue-light) 100%)"
+                        : step.n === "03"
+                        ? "linear-gradient(135deg, var(--sky-blue-light) 0%, var(--soft-green-light) 100%)"
+                        : "linear-gradient(135deg, var(--warm-orange-light) 0%, var(--sky-blue-light) 100%)",
+                      maskImage: "linear-gradient(to bottom, black 0%, black 40%, transparent 85%)",
+                      WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 40%, transparent 85%)",
                     }}
                   />
                 </div>
                 {/* Number top-left */}
                 <div className="relative z-10 p-7">
-                  <span className="font-pixel text-[11px] text-black/20 tracking-widest block">{step.n}</span>
+                  <span className="font-pixel text-[11px] text-sky-blue/40 tracking-widest block">{step.n}</span>
                 </div>
                 {/* Text pushed further down */}
                 <div className="relative z-10 px-7 pb-7 mt-auto pt-16">
-                  <h3 className="text-2xl font-light mb-3">{step.title}</h3>
-                  <p className="text-sm text-black/45 leading-relaxed">{step.desc}</p>
+                  <h3 className="text-2xl font-light mb-3 text-neutral-dark">{step.title}</h3>
+                  <p className="text-sm text-neutral-dark/50 leading-relaxed">{step.desc}</p>
                 </div>
               </BentoCard>
             ))}
@@ -531,7 +536,7 @@ export default function AgenticPage() {
         </div>
       </section>
 
-      {/* ── LIVE AGENTS ��──────────────────────────────────────────────────── */}
+      {/* ── LIVE AGENTS ��──���───────────────────────────────────────────────── */}
       <section id="live" className="py-32 px-6 md:px-12 lg:px-20 border-t border-black/[0.06]">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -691,10 +696,10 @@ export default function AgenticPage() {
       </section>
 
 
-      {/* ── FOOTER ────────────────────────────────────────────────────────── */}
+      {/* ── FOOTER ─────────────────────────────�����──────────────────────────── */}
       <footer className="py-10 px-6 md:px-12 lg:px-20 border-t border-black/[0.06]">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <span className="font-pixel text-xs tracking-[0.25em] text-black/50">AGENTIC</span>
+          <span className="font-pixel text-xs tracking-[0.25em] text-black/50">ORECA</span>
 
           {/* Nav sections */}
           <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
@@ -713,7 +718,7 @@ export default function AgenticPage() {
           {/* Legal links */}
           <div className="flex items-center gap-6">
             {[
-              { label: "Privacy", href: "#" },
+              { label: "Privacy", href: "/privacy" },
               { label: "Terms",   href: "#" },
               { label: "Docs",    href: "#" },
               { label: "GitHub",  href: "#" },
@@ -723,7 +728,7 @@ export default function AgenticPage() {
           </div>
         </div>
         <div className="max-w-6xl mx-auto mt-8 pt-6 border-t border-black/[0.04]">
-          <span className="text-xs text-black/20">© 2026 Agentic. All rights reserved.</span>
+          <span className="text-xs text-black/20">© 2026 ORECA. All rights reserved.</span>
         </div>
       </footer>
     </div>

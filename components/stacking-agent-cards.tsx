@@ -8,28 +8,32 @@ const AGENTS = [
     title: "Web & data research",
     desc: "Autonomously browses the web, extracts structured data, synthesizes reports from multiple sources with citations.",
     stats: [{ v: "2.4M", l: "tasks run" }, { v: "98.2%", l: "accuracy" }],
-    img: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/researcher-CvhqOuV6irGwBOnJoTGFlXdbyYBRjb.png",
+    gradientFrom: "#4da6ff",
+    gradientTo: "#6ee7a0",
   },
   {
     label: "CODER",
     title: "Code generation & review",
     desc: "Writes, refactors, and reviews code across 40+ languages. Runs tests, fixes bugs, opens pull requests automatically.",
     stats: [{ v: "1.1M", l: "PRs merged" }, { v: "3.2s", l: "avg response" }],
-    img: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/coder-9bItvCegU6TXUqbX3tUXGBAtvkBkXp.png",
+    gradientFrom: "#6ee7a0",
+    gradientTo: "#e87722",
   },
   {
     label: "ANALYST",
     title: "Data analysis & insights",
     desc: "Connects to your databases, runs queries, visualizes trends, and surfaces anomalies before they become problems.",
     stats: [{ v: "880K", l: "reports" }, { v: "12x", l: "faster" }],
-    img: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/analyst-Ysxnqg7Fpy2cfA56PiIttv1KximMhT.png",
+    gradientFrom: "#e87722",
+    gradientTo: "#4da6ff",
   },
   {
     label: "EXECUTOR",
     title: "Workflow automation",
     desc: "Takes actions across APIs: sends messages, creates calendar events, triggers webhooks, and manages third-party apps.",
     stats: [{ v: "5.6M", l: "executions" }, { v: "99.9%", l: "uptime" }],
-    img: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/executor-o1q6509qMLXMtpBIGo49vcgOu34sI1.png",
+    gradientFrom: "#1e5a96",
+    gradientTo: "#6ee7a0",
   },
 ]
 
@@ -98,37 +102,33 @@ export function StackingAgentCards() {
             >
               <div className="group relative bg-[#faf9f7] rounded-2xl border border-black/[0.07] overflow-hidden cursor-pointer">
 
-                {/* ── MOBILE: image top, fades out at bottom ── */}
-                {agent.img && (
-                  <div className="relative w-full h-52 pointer-events-none md:hidden">
-                    <img
-                      src={agent.img}
-                      alt={agent.label}
-                      className="absolute inset-0 w-full h-full object-cover object-center"
-                      style={{
-                        maskImage: "linear-gradient(to bottom, black 0%, black 35%, transparent 85%)",
-                        WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 35%, transparent 85%)",
-                      }}
-                    />
-                  </div>
-                )}
+                {/* ── MOBILE: gradient top, fades out at bottom ── */}
+                <div className="relative w-full h-52 pointer-events-none md:hidden opacity-30">
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background: `linear-gradient(135deg, ${agent.gradientFrom} 0%, ${agent.gradientTo} 100%)`,
+                      maskImage: "linear-gradient(to bottom, black 0%, black 35%, transparent 85%)",
+                      WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 35%, transparent 85%)",
+                    }}
+                  />
+                </div>
 
-                {/* ── DESKTOP: image right, fades out at left (absolute) ── */}
-                {agent.img && (
-                  <div className="hidden md:block absolute inset-y-0 right-0 w-1/2 pointer-events-none">
-                    <img
-                      src={agent.img}
-                      alt={agent.label}
-                      className="w-full h-full object-cover object-center"
-                    />
-                    <div
-                      className="absolute inset-0"
-                      style={{
-                        background: "linear-gradient(to right, #faf9f7 0%, transparent 55%)",
-                      }}
-                    />
-                  </div>
-                )}
+                {/* ── DESKTOP: gradient right, fades out at left (absolute) ── */}
+                <div className="hidden md:block absolute inset-y-0 right-0 w-1/2 pointer-events-none opacity-25">
+                  <div
+                    className="w-full h-full"
+                    style={{
+                      background: `linear-gradient(135deg, ${agent.gradientFrom} 0%, ${agent.gradientTo} 100%)`,
+                    }}
+                  />
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background: "linear-gradient(to right, #faf9f7 0%, transparent 55%)",
+                    }}
+                  />
+                </div>
 
                 {/* Text content */}
                 <div

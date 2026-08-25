@@ -4,39 +4,50 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  /* ORECA Brand Colors: Calm Intelligence */
+  --sky-blue-dark: oklch(0.52 0.16 260);     /* Deep sky blue #1e5a96 */
+  --sky-blue: oklch(0.65 0.13 260);          /* Medium sky blue #4da6ff */
+  --sky-blue-light: oklch(0.80 0.08 260);    /* Light sky blue #b3d9ff */
+  --soft-green: oklch(0.72 0.12 142);        /* Soft green #6ee7a0 */
+  --soft-green-light: oklch(0.85 0.08 142);  /* Very light green #d4f9e8 */
+  --warm-orange: oklch(0.62 0.18 47);        /* Warm orange #e87722 (softened) */
+  --warm-orange-light: oklch(0.75 0.12 47);  /* Light orange #f5b899 */
+  --neutral-gray: oklch(0.96 0.01 0);        /* Very light gray #f5f5f4 */
+  --neutral-dark: oklch(0.25 0 0);           /* Dark gray/charcoal #3a3a3a */
+
+  --background: var(--neutral-gray);
+  --foreground: var(--neutral-dark);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: var(--neutral-dark);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --popover-foreground: var(--neutral-dark);
+  --primary: var(--sky-blue-dark);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: var(--soft-green);
+  --secondary-foreground: var(--neutral-dark);
+  --muted: var(--neutral-gray);
+  --muted-foreground: oklch(0.5 0 0);
+  --accent: var(--warm-orange);
+  --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  --border: var(--sky-blue-light);
+  --input: var(--neutral-gray);
+  --ring: var(--sky-blue);
+  --chart-1: var(--sky-blue);
+  --chart-2: var(--soft-green);
+  --chart-3: var(--warm-orange);
+  --chart-4: var(--sky-blue-light);
+  --chart-5: var(--soft-green-light);
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: var(--neutral-gray);
+  --sidebar-foreground: var(--neutral-dark);
+  --sidebar-primary: var(--sky-blue-dark);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: var(--soft-green);
+  --sidebar-accent-foreground: var(--neutral-dark);
+  --sidebar-border: var(--sky-blue-light);
+  --sidebar-ring: var(--sky-blue);
 }
 
 .dark {

@@ -11,20 +11,20 @@ const _courierPrime = Courier_Prime({ weight: ["400", "700"], subsets: ["latin"]
 const _ibmPlexSans = IBM_Plex_Sans({ weight: ["300", "400", "500", "600"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Agentic — Autonomous AI Agents at Scale',
-  description: 'Deploy autonomous AI agents that think, act, and execute across any workflow. Connect 200+ integrations, run agents in parallel, and ship faster with the Agentic platform.',
+  title: 'ORECA — Autonomous AI Agents at Scale',
+  description: 'Deploy autonomous AI agents that think, act, and execute across any workflow. Connect 200+ integrations, run agents in parallel, and ship faster with the ORECA platform.',
   keywords: ['AI agents', 'autonomous agents', 'LLM orchestration', 'AI automation', 'multi-agent platform'],
-  authors: [{ name: 'Agentic' }],
+  authors: [{ name: 'ORECA' }],
   openGraph: {
-    title: 'Agentic — Autonomous AI Agents at Scale',
+    title: 'ORECA — Autonomous AI Agents at Scale',
     description: 'Deploy autonomous AI agents that think, act, and execute across any workflow.',
     type: 'website',
     url: 'https://agentic.ai',
-    siteName: 'Agentic',
+    siteName: 'ORECA',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Agentic — Autonomous AI Agents at Scale',
+    title: 'ORECA — Autonomous AI Agents at Scale',
     description: 'Deploy autonomous AI agents that think, act, and execute across any workflow.',
   },
   icons: {
